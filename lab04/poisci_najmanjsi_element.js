@@ -1,7 +1,24 @@
-function  poisci_najmanjsi_element(t, n) {
-   //Sem pride koda
-   return i_min;
+function poisci_najmanjsi_element(t, n) {
+    // preveri veljavnost indeksa n
+    if (n < 0 || n >= t.length - 1) {
+        return -1;
+    }
+
+    let i_min = n;
+    let e_min = t[n];
+
+    // išči najmanjši element od n do elementa pred 0 (čuvaj)
+    for (let i = n; i < t.length - 1; i++) {
+        if (t[i] < e_min) {
+            e_min = t[i];
+            i_min = i;
+        }
+    }
+
+    return i_min;
 }
+
+
 
 
 
